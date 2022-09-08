@@ -1,10 +1,8 @@
 * {
     font-family: arial;
   }
-  div {
-    border-style: solid;
-    margin: 2px;
-    padding: 4px;
+  body {
+    background-color: black;
   }
   #content{
     background-color: #f1f1f1;
@@ -20,16 +18,12 @@
     text-align: center;
     border-color: blue;
   }
-  #linksBox {
-    background-color: blue;
-  
-  }
   #parasBox {
-    background-color: blue;
+    
   }
   #container {
     width: auto;
-    height: auto;
+    height: 110%;
     margin: 2px;
     padding: 4px;
     background-color: white;
