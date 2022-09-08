@@ -19,11 +19,11 @@
     border-color: blue;
   }
   #parasBox {
-    
+
   }
   #container {
     width: auto;
-    height: 110%;
+    height: auto;
     margin: 2px;
     padding: 4px;
     background-color: white;
