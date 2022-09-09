@@ -1,8 +1,81 @@
 <!DOCTYPE html>
 <html>
-
-
-
-
-
+<head>
+    <title>Jason Lara</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-timeline.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-data-adapter.min.js"></script>
+</head>
+<body>
+    <div id="content">
+        <div id="headerBox">
+            <h1>Jason Lara's Portfolio</h1>
+        </div>
+        <div id="parasBox">
+            <div class="para">
+              <h3>Basic Information</h3>
+              <p>Welcome to Jason Lara's portfolio! Here you will find his accomplishments and goals that set him apart from the rest! He was born on February 2nd, 2005 and is currently in the IT Programming branch at York Country School of Technology.</p>
+            </div>
+            <div class="para">
+              <h3>Goals</h3>
+              <p>Jason has a multitude of goals, but his most important one is make a library of code in the future, as well as work on more programming projects.</p>
+            </div>
+            <div class="para">
+              <h3>Current Projects and Past Achievements</h3>
+              <p>He is currently developing a version of snake to work on multiple browsers. In terms of mathematics, he has also taken calculus as his highest source of math education so far.</p>
+            </div>
+            <div id="container">
+                <script>
+                    anychart.onDocumentReady(function () {
+                        anychart.data.loadJsonFile('https://raw.githubusercontent.com/APlitt24235/Jlara2005.github.io/main/data.json',
+                            function(data) {
+                                //Creates the timeline chart
+                                var chart = anychart.timeline();
+                                //Creates the main timeline datapoints
+                                for (var i = 0; i < data.jasonFacts.length; i++) {
+                                    //Creates a range series
+                                    var series = chart.range ([
+                                        [
+                                            data.jasonFacts[i].title,
+                                            data.jasonFacts[i].start,
+                                            data.jasonFacts[i].end
+                                        ]
+                                    ]);
+                                }
+                                //Creates dataset for the top datapoints
+                                var jasonDataSet = anychart.data.set(data.jasonFacts);
+                                //Maps the top datapoints
+                                var jasonMapping = jasonDataSet.mapAs({
+                                    x: 'date',
+                                    value: 'title'
+                                });
+                                //Creates top series with moments
+                                var jasonMappingSeries = chart.moment(jasonMapping);
+                                //Sets chart scale levels
+                                chart.scale().zoomLevels([
+                                    [
+                                        {unit: 'years', count: 1}
+                                    ]
+                                ]);
+                                //Enables chart scroller
+                                chart.scroller().enabled(true);
+                                //Sets chart's title
+                                chart.title("Jason Lara's Important Events");
+                                //Sets container id for the chart
+                                chart.container('container');
+                                //Initiates chart drawing
+                                chart.draw();
+                            }
+                        );
+                    });
+                </script>
+            </div>
+            <div class="para">
+              <h3>Contact Information</h3>
+              <p>His school email: Jason2023@live.ytech.edu</p>
+            </div>
+          </div>
+    </div>
+</body>
 </html>

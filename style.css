@@ -1,0 +1,43 @@
+* {
+    font-family: arial;
+  }
+  body {
+    background-color: black;
+  }
+  #content{
+    background-color: #f1f1f1;
+    color: black;
+    width: auto;
+    height: auto;
+    border: 1px solid violet;
+  }
+  #headerBox {
+    background-color: white;
+    border-style: inset;
+    color: black;
+    text-align: center;
+    border-color: blue;
+  }
+  #container {
+    width: auto;
+    height: auto;
+    margin: 2px;
+    padding: 4px;
+    background-color: white;
+    border-color: violet;
+  }
+  .para {
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: auto;
+    width: auto;
+    border: 1px solid violet;
+  }
+  a {
+    color: white;
+  }
+  a:hover {
+    color: purple;
+  }
